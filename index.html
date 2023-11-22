@@ -7,30 +7,41 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div>
-        <p>Original video:</p>
-        <video autoplay playsinline></video>
-    </div>
-    <div>
-        <p>Video with red nose:</p>
-        <canvas width="640" height="480" id="client"></canvas>
-    </div>
-    <div>
-        <p>Video from the server:</p>
-        <canvas width="640" height="480" id="other"></canvas>
-    </div>
-
-    <div>
+    <header>
+        <h1>Send in the Clowns</h1>
+    </header>
+    <main>
         <div>
-            <label for="quality">Quality:</label>
-            <input type="range" name="quality" id="quality" min="0" max="1" step="0.05" value="0.5">
+            <p>Original video:</p>
+            <video autoplay playsinline></video>
         </div>
         <div>
-            <label for="fps">Frames per second:</label>
-            <input type="range" name="fps" id="fps" min="1" max="60" step="1" value="30">
+            <p>Video with red nose:</p>
+            <canvas width="640" height="480" id="client"></canvas>
         </div>
-        <p>High quality with a high refresh rate can introduce delay</p>
-    </div>
+        <div>
+            <p>Video from the server:</p>
+            <canvas width="640" height="480" id="server"></canvas>
+        </div>
+    
+        <aside class="options">
+            <h2>Options</h2>
+            <div>
+                <label for="quality">Quality:</label>
+                <input type="range" name="quality" id="quality" min="0" max="1" step="0.05" value="0.5">
+            </div>
+            <div>
+                <label for="fps">Frames per second:</label>
+                <input type="range" name="fps" id="fps" min="1" max="60" step="1" value="30">
+            </div>
+            <div>
+                <label for="show-face-keypoints">Show face keypoints</label>
+                <input type="checkbox" id="show-face-keypoints">
+            </div>
+            <p>High quality with a high refresh rate can introduce delay</p>
+        </aside>
+    </main>
+    
 
     <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
     <script src="https://unpkg.com/socket.io-client@4.6.0/dist/socket.io.min.js"></script>
